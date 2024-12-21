@@ -1,0 +1,26 @@
+{
+	"couples": [
+		{
+			"name": "Fulan bin Fulan",
+			"sosmed": [
+				{ "icon": "fab fa-instagram", "link": "http://fake.com" },
+				{ "icon": "fab fa-facebook", "link": "http://fake.com" },
+				{ "icon": "fab fa-twitter", "link": "http://fake.com" }
+			],
+			"parents": ["Fulan", "Fulanah"],
+			"thumb": "/couples/couple-male.jpg",
+			"address": "Kp. Tengah, Kec. Kramat jati, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta"
+		},
+		{
+			"name": "Fulanah binti Fulan",
+			"sosmed": [
+				{ "icon": "fab fa-instagram", "link": "http://fake.com" },
+				{ "icon": "fab fa-facebook", "link": "http://fake.com" },
+				{ "icon": "fab fa-twitter", "link": "http://fake.com" }
+			],
+			"parents": ["Fulan", "Fulanah"],
+			"thumb": "/couples/couple-female.jpg",
+			"address": "Jl. Dr. Mr. Mohd Hasan, Batoh, Kec. Lueng Bata, Kota Banda Aceh, Aceh"
+		}
+	]
+}
