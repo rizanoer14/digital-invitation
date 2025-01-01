@@ -1,8 +1,8 @@
 {
-  "short_name": "Diundang",
-  "name": "Diundang - Digital Wedding Invitaion",
+  "short_name": "Merid",
+  "name": "Merid - Digital Wedding Invitaion",
   "theme_color": "#fff",
-  "background_color": "#103AB9",
+  "background_color": "#BE7575",
   "display": "standalone",
   "orientation": "portrait",
   "scope": "/",

@@ -1,26 +1,32 @@
 {
 	"timelines": [
 		{
-			"title": "Resepsi",
-			"date": "Sabtu, 22 Mei 2022",
-			"time": "08:30 WIB - 09:30 WIB",
-			"location": "Mesjid Jami An Nuur",
-			"address": "Jl. Raden Agung Pangestu KM. 12 Kelurahan Cidro Laras Kecamatan Candi Putih - Brebes, Jawa Timur"
-		},
-		{
 			"title": "Akad Nikah",
-			"date": "Ahad, 21 Mei 2022",
-			"time": "08:00 WIB - 16:30 WIB",
-			"location": "Rumah Mempelai Pria",
-			"address": "Jl. Raden Agung Pangestu KM. 12 Kelurahan Cidro Laras Kecamatan Candi Putih - Brebes, Jawa Timur"
-
+			"day": "Sabtu",
+			"date": "24 Februari 2027",
+			"time": "08:00 - 10:00 WIB",
+			"location": "Masjid Istiqlal Jakarta",
+			"address": "Jl. Taman Wijaya Kusuma, Ps. Baru, Kecamatan Sawah Besar, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10710",
+			"image": "../timeline/akad.webp",
+			"dressCode": [
+				"Pakaian Muslim",
+				["Bawahan Putih", "#FFF"],
+				["Atasan Merah", "#FF0000"]
+			]
 		},
 		{
-			"title": "Siraman",
-			"date": "Jum'at, 20 Mei 2022",
-			"time": "08:00 - 12:00 WIB",
-			"location": "Rumah Mempelai Pria",	
-			"address": "Jl. Raden Agung Pangestu KM. 12 Kelurahan Cidro Laras Kecamatan Candi Putih - Brebes, Jawa Timur"
+			"title": "Resepsi",
+			"day": "Sabtu",
+			"date": "24 Februari 2027",
+			"time": "17:00 - 21:00 WIB",
+			"location": "The Langham Ballroom",
+			"address": "Sudirman Central Business District 8 Lot.28, Senayan, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12190",
+			"image": "../timeline/resepsi.webp",
+			"dressCode":[
+				"Pakaian Muslim",
+				["Bawahan Putih", "#FFF"],
+				["Atasan Hitam", "#121212"]
+			]
 		}
 	]
 }

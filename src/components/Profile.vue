@@ -1,9 +1,9 @@
 <template>
-  <section class="w-10/12 mx-auto flex flex-wrap justify-center items-center gap-5 mt-6">
+  <div class="w-full px-5 mx-auto flex flex-wrap md:flex-row md:flex-nowrap justify-center items-center gap-5">
     <template v-for="(couple, x) in couples" :key="x">
       <ProfilePict :source="couple" />
     </template>
-  </section>
+  </div>
 </template>
 
 <script setup>

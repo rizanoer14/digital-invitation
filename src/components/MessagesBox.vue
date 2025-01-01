@@ -1,16 +1,11 @@
 <template>
-  <section class="w-10/12 mx-auto mt-6">
-    <p>Ada {{ messages.length }} pesan dari para tamu</p>
-  </section>
-  <section style="max-height: 400px" class="w-10/12 mt-5 mx-auto overflow-scroll">
+  <section style="max-height: 400px" class="bg-rose-surface-1 overflow-y-auto flex flex-col gap-y-4 px-5 py-4 mt-4">
     <template v-for="(msg, x) in messages" :key="x">
-      <div class="w-full mb-5 border-b-2 border-green-200 pb-1">
-        <span class="flex gap-2 items-center">
-          <p class="kalam-font text-green-500 text-xl">{{ msg.guestName }}</p>
-          <span class="py-1 px-2 bg-gray-600 text-gray-100 rounded-lg text-xxs">{{ msg.guestStatus ? 'Hadir' : 'Tidak Hadir' }}</span>
-        </span>
-        <p class="font-medium text-xs mt-2">Pada {{ msg.timestamp }}</p>
-        <p class="text-sm">{{ msg.guestMessage }}</p>
+      <div class="bg-rose-surface-2 px-5 py-4 rounded-lg">
+        <p>{{ msg.guestMessage }}</p>
+        <p class="text-sm font-semibold mt-4 text-rose-main">{{ msg.guestName }}</p>
+        <p class="text-xs text-gray-tertiary mt-2">{{ msg.timestamp }}</p>
+        
       </div>
     </template>
   </section>

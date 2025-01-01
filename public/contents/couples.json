@@ -1,26 +1,24 @@
 {
 	"couples": [
 		{
-			"name": "Fulan bin Fulan",
+			"name": "Haris Utama",
+			"shortName": "Haris",
 			"sosmed": [
-				{ "icon": "fab fa-instagram", "link": "http://fake.com" },
-				{ "icon": "fab fa-facebook", "link": "http://fake.com" },
-				{ "icon": "fab fa-twitter", "link": "http://fake.com" }
+				{ "icon": "bx bxl-instagram-alt bx-sm", "link": "http://fake.com" }
 			],
-			"parents": ["Fulan", "Fulanah"],
-			"thumb": "/couples/couple-male.jpg",
-			"address": "Kp. Tengah, Kec. Kramat jati, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta"
+			"parents": ["Dimas Utama", "Azizah Apriliana"],
+			"thumb": "/couples/groom.webp",
+			"gender": "man"
 		},
 		{
-			"name": "Fulanah binti Fulan",
+			"name": "Citra Khairunissa",
+			"shortName": "Citra",
 			"sosmed": [
-				{ "icon": "fab fa-instagram", "link": "http://fake.com" },
-				{ "icon": "fab fa-facebook", "link": "http://fake.com" },
-				{ "icon": "fab fa-twitter", "link": "http://fake.com" }
+				{ "icon": "bx bxl-instagram-alt bx-sm", "link": "http://fake.com" }
 			],
-			"parents": ["Fulan", "Fulanah"],
-			"thumb": "/couples/couple-female.jpg",
-			"address": "Jl. Dr. Mr. Mohd Hasan, Batoh, Kec. Lueng Bata, Kota Banda Aceh, Aceh"
+			"parents": ["Wawan Suhendar", "Mutia Anissa"],
+			"thumb": "/couples/bride.webp",
+			"gender": "woman"
 		}
 	]
 }

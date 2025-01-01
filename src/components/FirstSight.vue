@@ -1,21 +1,18 @@
 <template>
-  <section class="w-full mb-12">
-    <wave class="fill-gray-800"></wave>
-    <section class="container-section">
-      <HeaderSection title="Pandangan Pertama"></HeaderSection>
-      <Card title="Kisah kami berawal dari">
-        <template v-slot:body>
-          <p class="text-sm p-6 text-justify">
-            In faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum hendrerit malesuada odio. Fusce ut elit ut augue sollicitudin blandit. Phasellus volutpat lorem. Duis non pede et neque luctus tincidunt. Duis interdum tempus elit. Aenean metus. Vestibulum ac lacus. Vivamus porttitor, massa ut hendrerit bibendum, metus.
-            <br><br>
-            Nunc et sem. Aliquam tempor. Nam lobortis sem non urna. Pellentesque et urna sit amet leo accumsan volutpat. Nam molestie lobortis.
-          </p>
-        </template>
-        <template v-slot:footer>
-          <img src="@/assets/images/couples.png" class="w-full" alt="">
-        </template>
-      </Card>
-    </section>
+  <section class="w-full bg-rose-surface-1">
+    <div class="lg:w-2/3 lg:mx-auto px-5">
+      <HeaderSection title="The Love Story" subtitle="Kisah romantis Haris & Citra hingga hari pernikahan"></HeaderSection>
+      <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
+        <Card v-for="(story, index) in stories" :key="index" data-aos="fade-up">
+          <template v-slot:body>
+            <img :src="story.image" :alt="story.title" class="w-full h-28 md:h-[202px] rounded-lg object-cover" width="260" height="202">
+            <p class="dancing-script-font font-bold text-lg mt-2 text-rose-main">{{ story.date }}</p>
+            <p class="font-semibold mt-2">{{ story.title }}</p>
+            <p class="text-xs text-rose-text-dark mt-4">{{ story.content }}</p>
+          </template>
+        </Card>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -23,6 +20,32 @@
 
 import HeaderSection from '@/components/HeaderSection.vue'
 import Card from '@/components/Card.vue'
-import wave from '@/assets/svg/wave.svg'
+
+const stories = [
+  {
+    "image": "../story/image-1.png",
+    "date": "Mei 2023",
+    "title": "Pertemuan Pertama",
+    "content": "Haris dan Citra bertemu untuk pertama kalinya di sebuah acara seminar kewirausahaan di Jakarta. Haris memulai percakapan saat keduanya berada di antrean kopi, dan sejak itu komunikasi mereka berlanjut."
+  },
+  {
+    "image": "../story/image-2.png",
+    "date": "Januari 2024",
+    "title": "Jadian",
+    "content": "Di momen ulang tahun Citra, Haris memberanikan diri untuk menyatakan perasaannya. Citra menerima, dan mereka resmi berpacaran."
+  },
+  {
+    "image": "../story/image-3.png",
+    "date": "Februari 2023",
+    "title": "Lamaran",
+    "content": "Di momen ulang tahun Citra, Haris memberanikan diri untuk menyatakan perasaannya. Citra menerima, dan mereka resmi berpacaran."
+  },
+  {
+    "image": "../story/image-4.png",
+    "date": "April 2024",
+    "title": "Hari Pernikahan",
+    "content": "Haris dan Citra mengikat janji suci mereka di hadapan keluarga dan sahabat, memulai babak baru sebagai pasangan suami istri."
+  }
+]
 
 </script>
