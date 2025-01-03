@@ -1,16 +1,24 @@
 <template>
-  <div class="px-2 py-4">
-    <p class="mx-auto text-center text-sm text-gray-100 w-10/12 mb-2">Menuju acara resepsi kami</p>
-    <section class="flex justify-center gap-3 ">
+  <div class="my-5">
+    <div class="flex justify-center md:w-6/12 md:mx-auto gap-3">
       <template v-for="(value, name, index) in countdown" :key="index">
         <div 
           data-aos="zoom-in"
           class="text-center w-3/12">
-          <p class="text-3xl font-medium text-amber-500 mb-2">{{ value }}</p>
-          <p class="text-gray-100 text-sm font-medium">{{ name }}</p>
+            <div class="w-[60px] h-[60px] rounded-full bg-rose-main flex items-center justify-center dancing-script-font text-gray-white text-2xl mx-auto">
+              {{ value }}
+            </div>
+          <p class="text-sm text-gray-tertiary mt-2 capitalize">{{ name }}</p>
         </div>
       </template>
-    </section>
+    </div>
+
+    <div class="flex justify-center">
+      <button type="button" class="bg-rose-main text-gray-white rounded-full flex items-center gap-x-2 px-5 py-2 font-semibold mt-5" data-aos="fade-up">
+        <i class="bx bx-calendar bx-sm"></i>
+        Simpan di Kalender
+      </button>
+    </div>
   </div>
 </template>
 
@@ -29,22 +37,22 @@ const createTimer = (target, container, cb) => {
    const now = new Date().getTime()
    const distance = target - now
    if ( distance > 0 ) {
-     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+     const hari = Math.floor(distance / (1000 * 60 * 60 * 24));
+     const jam = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+     const menit = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+     const detik = Math.floor((distance % (1000 * 60)) / 1000);
       
-     container.value = { days, hours, minutes, seconds }
+     container.value = { hari, jam, menit, detik }
      //alert(JSON.stringify(container))
       
-     if (days === 0 && hours === 0 && minutes === 0 && seconds === 0 ) cb()
+     if (hari === 0 && jam === 0 && menit === 0 && detik === 0 ) cb()
    } else {
-     container.value = { days: 0, hours: 0, minutes: 0, seconds: 0 }
+     container.value = { hari: 0, jam: 0, menit: 0, detik: 0 }
    } 
 }
 
 const timer = setInterval(() => {
-  createTimer(new Date('2022-05-23 08:30').getTime(), countdown, () => {
+  createTimer(new Date('2027-02-24 08:00').getTime(), countdown, () => {
     clearInterval(timer)
   })
 }, 1000)

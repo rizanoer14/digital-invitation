@@ -1,69 +1,51 @@
 <style scoped>
-
-.frame {
-  @apply w-4/12 rotate-180;
-}
-
-.input-wrapper {
-  @apply w-full flex flex-wrap gap-1 mb-3;
-}
-
-label {
-  @apply w-full text-gray-600 font-medium;
-}
-
 input, textarea, select, option {
-  @apply w-full px-2 py-3 rounded-lg bg-gray-800 border border-gray-100 shadow-lg duration-300 focus:border-gray-500 text-gray-200 placeholder:text-gray-400;
-}
+  @apply w-full px-5 py-2 mt-2 rounded-lg bg-rose-surface-1 border border-rose-border-2 outline-none placeholder:text-gray-tertiary;
+} 
 
 </style>
 
 <template>
-  <section class="w-full bg-slate-100 pt-5">
-    <section class="container-section bg-slate-100">
-      <HeaderSection title="Buku Tamu" subtitle="Demi kelancaran acara dimohon untuk para tamu undangan untuk memastikan kehadirannya pada acara kami" />
+  <section class="w-full bg-rose-surface-2 py-10">
+    <section class="px-5">
+      <HeaderSection title="Wishes" subtitle="" />
       <!-- Form -->
       <form 
         ref="form"
         @submit="sendMessage"
-        class="w-10/12 mx-auto mt-6">
+        class="mt-4 px-5 py-4 bg-rose-surface-1 rounded-lg">
         <!-- Alert -->
         <Alert :statusResponse="statusResponse" :showAlert="showAlert" v-on:close="showAlert = false" />
         <!-- Guest Name -->
-        <div class="input-wrapper" data-aos="zoom-in">
-          <label for="GuestName">Nama</label>
-          <input v-model="GuestName" placeholder="Nama lengkap anda" name="GuestName" id="GuestName" type="text" required>
+        <div data-aos="zoom-in">
+          <label for="GuestName" class="poppins-font">Nama</label>
+          <input v-model="GuestName" placeholder="Contoh: Kevin" name="GuestName" id="GuestName" type="text" required>
         </div>
         <!-- Guest Status -->
-        <div class="input-wrapper" data-aos="zoom-in">
+        <!-- <div class="input-wrapper" data-aos="zoom-in">
           <label for="GuestStatus">Kehadiran</label>
           <select v-model="GuestStatus" name="GuestStatus" id="GuestStatus" required>
             <option value="Hadir">Hadir</option>
             <option value="Tidak Hadir">Tidak Hadir</option>
           </select>
-        </div>
+        </div> -->
         <!-- Guest Message -->
-        <div class="input-wrapper" data-aos="zoom-in">
-          <label for="GuestMessage">Pesan</label>
+        <div class="mt-4" data-aos="zoom-in">
+          <label for="GuestMessage" class="poppins-font">Pesan</label>
           <textarea placeholder="Tuliskan pesan anda disini" v-model="GuestMessage" name="GuestMessage" id="GuestMessage" cols="30" rows="5" required></textarea>
         </div>
         {{ query }}
         <!-- Submit -->
-        <button 
-          data-aos="zoom-in"
-          class="w-full bg-gray-800 text-gray-100 mt-6 rounded-lg py-2 font-medium pointer active:scale-90 hover:border border-gray-500 hover:bg-gray-100 hover:text-green-500 duration-300" type="submit">
-          <i class="fa fa-paper-plane mr-1"></i>
-          Kirim pesan
+        <button
+          class="w-full bg-rose-main text-gray-white mt-6 rounded-full px-5 py-2 font-semibold pointer" type="submit">
+          Kirim Ucapan
         </button>
       </form>
       <!-- Gift Section -->
       <Gift></Gift>
       <!-- Message Box -->
-      <!--MessagesBox :messages="messages" -->
+      <MessagesBox :messages="messages"></MessagesBox>
       <!-- Frames -->
-      <div class="w-full text-center pb-12 mt-12">
-        <p class="text-sm text-amber-600 font-medium">Diundang &copy; 2022</p>
-      </div>
     </section>
   </section>
 </template>
@@ -75,18 +57,73 @@ import { useRoute } from 'vue-router'
 import axios from 'axios'
 import HeaderSection from '@/components/HeaderSection.vue'
 import Alert from '@/components/Alert.vue'
+import MessagesBox from '@/components/MessagesBox.vue';
+
 //import Gift from '@/components/Gift.vue'
 
 // Form handler
 const form = ref(null)
 const GuestName = ref(null)
 const GuestMessage= ref(null)
-const GuestStatus = ref('Hadir')
+// const GuestStatus = ref('Hadir')
 
 // Alert handler
 const statusResponse = ref(false)
 const showAlert = ref(false)
 
+// Data Dummy
+const messages = [
+  {
+    guestName: "Andi & Rina",
+    timestamp: "12 Januari 2024, 10:00 WIB",
+    guestMessage: "Selamat menempuh hidup baru, Andi & Rina! Semoga cinta kalian terus tumbuh dan membawa kebahagiaan yang abadi. Selamat atas hari yang penuh berkah ini!",
+  },
+  {
+    guestName: "Dimas & Sinta",
+    timestamp: "20 Januari 2024, 14:00 WIB",
+    guestMessage: "Selamat berbahagia, Dimas & Sinta! Semoga pernikahan ini menjadi awal dari perjalanan yang indah penuh cinta dan keharmonisan. Doa terbaik untuk kalian!",
+  },
+  {
+    guestName: "Bayu & Intan",
+    timestamp: "5 Februari 2024, 09:00 WIB",
+    guestMessage: "Bayu & Intan, selamat atas hari bahagia kalian! Semoga pernikahan ini menjadi awal kisah cinta yang penuh makna dan kebahagiaan selamanya.",
+  },
+  {
+    guestName: "Arif & Dewi",
+    timestamp: "15 Februari 2024, 15:30 WIB",
+    guestMessage: "Arif & Dewi, selamat menempuh hidup baru! Semoga cinta, kebahagiaan, dan kedamaian selalu menyertai rumah tangga kalian. Selamat menikmati hari istimewa ini!",
+  },
+  {
+    guestName: "Yoga & Lina",
+    timestamp: "1 Maret 2024, 11:00 WIB",
+    guestMessage: "Yoga & Lina, selamat atas pernikahan kalian! Semoga hari ini menjadi awal perjalanan cinta yang luar biasa dan penuh berkah.",
+  },
+  {
+    guestName: "Budi & Maya",
+    timestamp: "10 Maret 2024, 17:00 WIB",
+    guestMessage: "Budi & Maya, selamat menikah! Semoga cinta kalian semakin kuat setiap harinya dan rumah tangga kalian selalu harmonis. Selamat berbahagia!",
+  },
+  {
+    guestName: "Eka & Rani",
+    timestamp: "20 Maret 2024, 13:00 WIB",
+    guestMessage: "Eka & Rani, selamat atas hari spesial ini! Semoga kalian selalu bersama dalam suka maupun duka, menjalani kehidupan dengan penuh cinta dan kebahagiaan.",
+  },
+  {
+    guestName: "Fajar & Sari",
+    timestamp: "5 April 2024, 08:30 WIB",
+    guestMessage: "Selamat menikah, Fajar & Sari! Semoga hari bahagia ini menjadi awal perjalanan cinta yang abadi, penuh kasih, dan berkah sepanjang masa.",
+  },
+  {
+    guestName: "Rian & Tika",
+    timestamp: "15 April 2024, 16:00 WIB",
+    guestMessage: "Selamat atas pernikahan kalian, Rian & Tika! Semoga cinta dan kebahagiaan selalu menyertai perjalanan rumah tangga kalian. Selamat berbahagia!",
+  },
+  {
+    guestName: "Aldi & Mira",
+    timestamp: "25 April 2024, 18:00 WIB",
+    guestMessage: "Aldi & Mira, selamat menikah! Semoga kalian selalu diberkahi cinta yang tulus dan kehidupan rumah tangga yang harmonis. Selamat menikmati hari yang indah ini!",
+  },
+];
 //URL
 const scriptURL = "https://script.google.com/macros/s/AKfycbzPgWJ7760OwwRlvjhrBMSM9HTVJL2wjDnDB3Up9ZOEIm09LMBwpmSpkQ6eGjAPGPCH/exec"
 const sendMessage = ( evt ) => {

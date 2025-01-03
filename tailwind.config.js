@@ -2,18 +2,33 @@ module.exports = {
   content: ["./src/**/*.{vue,js,ts,jsx,tsx}", "./index.html"],
   theme: {
     extend: {
-      backgroundImage: {
-        "couples": "url('@/assets/images/couples.png')",
-        "texture": "url('@/assets/textures/paper.png')",
-        "prewedding": "url('@/assets/prewedding.jpg')"
+     colors: {
+      'rose': {
+        'surface-1': '#F9F2F2',
+        'surface-2': '#F6EAEA',
+        'border-1': '#E3BEBE',
+        'border-2': '#D29797',
+        'main': '#BE7575',
+        'text-dark': '#633939',
+        'hover': '#A85A5A',
+        'press': '#8C4949',
       },
-      fontSize: {
-        'xxs': '.65rem',
-        'title': '3.5rem'
+      'gray': {
+        'white': "#FFF",
+        'surface': "#F6F6F6",
+        'surface-disabled': "#D1D1D1",
+        "border": "#E7E7E7",
+        "tertiary": "#5D5D5D",
+        "secondary": "#454545",
+        "black": "#121212",
       },
-      borderRadius: {
-        '4xl': '2rem'
-      }
+     },
+     lineHeight: {
+      '120': '120%'
+     },
+     backgroundImage: {
+      'pattern': 'url(./src/assets/images/event-header.webp)'
+     },
     },
   },
   plugins: [],

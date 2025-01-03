@@ -1,31 +1,21 @@
-<style scoped>
-
-.button {
-  @apply bg-gray-600 bg-opacity-50 backdrop-blur-sm border border-gray-700 rounded-full text-lg grid place-items-center left-3 text-amber-400 z-50 mb-2;
-  height: 40px;
-  width: 40px;
-} 
-
-</style>>
-
 <template>
-  <audio ref="audioEl" autoplay>
+  <audio ref="audioEl" autoplay loop>
     <source src="@/assets/audio/backsound.mp3" type="audio/mp3">
   </audio>
-  <section class="fixed bottom-24 pl-2">
-    <button class="button" @click="control">
-      <i v-if="!isPlayed" class="fa-solid fa-volume-off"></i>
-      <i v-else class="fa-solid fa-volume-high"></i>
+  <div class="fixed bottom-8 right-8 z-50">
+    <button class="w-10 h-10 flex items-center justify-center rounded-full bg-rose-surface-2 border border-rose-border-2 text-rose-text-dark shadow-md" @click="control" aria-label="Play Music">
+      <i v-if="!isPlayed" class="bx bxs-volume-mute bx-sm"></i>
+      <i v-else class="bx bxs-volume-full bx-sm"></i>
     </button>
-    <button @click="giftAction" class="button">
+    <!-- <button @click="giftAction" class="button">
       <i class="fa-solid fa-gift"></i>
-    </button>
-  </section>
+    </button> -->
+  </div>
 </template>
 
 <script setup>
 
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue'
 import { useState } from '@/stores/state.js'
 
 const state = useState()
@@ -45,6 +35,6 @@ const control = () => {
 
 watch(isAudioPlay, control)
 
-const giftAction = () => setTimeout(() => { document.querySelector('#envelope').scrollIntoView({ behavior: 'smooth' }) }, 300)
+// const giftAction = () => setTimeout(() => { document.querySelector('#envelope').scrollIntoView({ behavior: 'smooth' }) }, 300)
 
 </script>

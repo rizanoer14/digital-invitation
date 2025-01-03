@@ -1,21 +1,24 @@
 <template>
-  <section class="w-full bg-slate-100">
-    <section class="w-full px-0">
-      <viewer :images="galleries">
-        <div class="flex flex-wrap">
+  <section class="w-full bg-rose-surface-1 py-10">
+    <div class="lg:w-2/3 lg:mx-auto">
+    <HeaderSection title="Galeri" subtitle=""></HeaderSection>
+    <div class="w-full px-5">
+      <viewer :images="galleries" class="mt-4">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
           <template
             v-for="src in galleries" :key="src" data-aos="zoom-in">
-            <div data-aos="fade-up" class="w-4/12">
-              <img :src="src" class="w-full" :alt="src" />
+            <div data-aos="zoom-in">
+              <img :src="src" class="w-full rounded-lg" :alt="src" width="328" height="381" />
             </div>
           </template>
         </div>
       </viewer>
       <!-- Our Story -->
-      <OurStory class="mt-10"></OurStory>
+      <!-- <OurStory class="mt-10"></OurStory> -->
       <!-- Our Video -->
-      <OurVideo class="mt-10"></OurVideo>
-    </section>
+      <!-- <OurVideo class="mt-10"></OurVideo> -->
+    </div>
+    </div>
   </section>
 </template>
 
@@ -23,10 +26,9 @@
 
 import axios from 'axios'
 import { ref, onMounted } from 'vue'
-import HeaderSection from '@/components/HeaderSection.vue'
-import OurVideo from '@/components/OurVideo.vue'
-import OurStory from '@/components/OurStory.vue'
-import wave from '@/assets/svg/wave.svg'
+import HeaderSection from './HeaderSection.vue';
+// import OurVideo from '@/components/OurVideo.vue'
+// import OurStory from '@/components/OurStory.vue'
 
 const galleries = ref(null)
 onMounted(() => {
